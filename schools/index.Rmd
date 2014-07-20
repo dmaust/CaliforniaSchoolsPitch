@@ -1,0 +1,87 @@
+---
+title       : California schools as measured by standardized testing
+subtitle    : https://dmaust.shinyapps.io/CaliforniaSchools/
+author      : David Maust
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+
+# Every Child is Unique
+
+When choosing a school for your child, there are many important
+factors to consider
+
+- Ability of your child.
+- Your child's areas of interest.
+- Your particular school district.
+
+With my tool, users are able to view relevant test results for their particular district, for the grade level of interest, with their subject of interest.
+
+--- &twocol w1:70% w2:30%
+
+# Distribution of California Schools
+
+*** =right
+
+```{r echo=FALSE}
+library(ggplot2)
+load('/home/dmaust/git/CaliforniaSchools/school_data.Rda')
+school_data_clean <- school_data[school_data$School.Code != 0,]
+agg_data <- aggregate(
+    cbind(
+      as.numeric(Percentage.At.Or.Above.Proficient) * Students.with.Scores/100, 
+      as.numeric(Students.with.Scores) 
+      )  
+        ~ School.Code + District.Code, school_data_clean, FUN=sum)
+names(agg_data)[3] <- 'Proficient'
+names(agg_data)[4] <- 'Students.with.Scores'
+agg_data$Percent.Proficient = agg_data$Proficient * 100 / agg_data$Students.with.Scores
+agg_data <- agg_data[agg_data$Students.with.Scores > 100,]
+
+```
+```{r warning=FALSE, echo=FALSE}
+print(ggplot(agg_data, aes(x = Percent.Proficient)) + geom_histogram( binwidth=3))
+```
+
+*** =left
+Here we can see the distribution of test scores through California schools. With this much variation, it is important to be informed when selecting a school for your child.
+
+With the my application it is easy to detemine which are the high performing schools, and which are the low perfomers in your district.
+
+---
+
+# Dataset
+
+Data is taken from the California Department of Education's website [1]. In it, there are data for `r length(unique(entity_data$District.Name))` different districts, containing `r length(unique(entity_data$School.Name))` schools. For these districts, `r sum(school_data_clean$Students.with.Scores)` test scores were recorded. For each of these, the level of proficiency is reported as: 
+- Far Below Basic
+- Below Basic
+- Basic
+- Proficient
+- Advanced
+
+With my application you are able to see the fraction of "Proficient" and "Advanced" scores achieved for each school in a given district, and you'll be able to see see it broken down by grade level and by subject.
+
+[1] - <a href="http://star.cde.ca.gov/star2013/index.aspx">California STAR Program</a>
+
+--- &twocol
+
+# Tests Reported
+
+You are able to see results broken down by grade levels, and for the following tests:
+```{r echo=FALSE}
+items <- lapply(tests$Test.Name, FUN=function(test){paste("<li style=\"font-size: 12pt;\"> ",test,"</li>")})
+```
+*** =left
+<ul>
+`r paste(items[1:16], collapse='')`.
+</ul>
+*** =right
+<ul>
+`r paste(items[17:32], collapse='')`.
+</ul>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>California schools as measured by standardized testing</title>
+  <meta charset="utf-8">
+  <meta name="description" content="California schools as measured by standardized testing">
+  <meta name="author" content="David Maust">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>California schools as measured by standardized testing</h1>
+    <h2>https://dmaust.shinyapps.io/CaliforniaSchools/</h2>
+    <p>David Maust<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h1>Every Child is Unique</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>When choosing a school for your child, there are many important
+factors to consider</p>
+
+<ul>
+<li>Ability of your child.</li>
+<li>Your child&#39;s areas of interest.</li>
+<li>Your particular school district.</li>
+</ul>
+
+<p>With my tool, users are able to view relevant test results for their particular district, for the grade level of interest, with their subject of interest.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h1>Distribution of California Schools</h1>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Here we can see the distribution of test scores through California schools. With this much variation, it is important to be informed when selecting a school for your child.</p>
+
+<p>With the my application it is easy to detemine which are the high performing schools, and which are the low perfomers in your district.</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h1>Dataset</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Data is taken from the California Department of Education&#39;s website [1]. In it, there are data for 1628 different districts, containing 8634 schools. For these districts, 16647348 test scores were recorded. For each of these, the level of proficiency is reported as: </p>
+
+<ul>
+<li>Far Below Basic</li>
+<li>Below Basic</li>
+<li>Basic</li>
+<li>Proficient</li>
+<li>Advanced</li>
+</ul>
+
+<p>With my application you are able to see the fraction of &quot;Proficient&quot; and &quot;Advanced&quot; scores achieved for each school in a given district, and you&#39;ll be able to see see it broken down by grade level and by subject.</p>
+
+<p>[1] - <a href="http://star.cde.ca.gov/star2013/index.aspx">California STAR Program</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h1>Tests Reported</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>You are able to see results broken down by grade levels, and for the following tests:</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li style="font-size: 12pt;">  CST English-Language Arts </li><li style="font-size: 12pt;">  CST Mathematics </li><li style="font-size: 12pt;">  CST Algebra I </li><li style="font-size: 12pt;">  CST Integrated Math 1 </li><li style="font-size: 12pt;">  CST Geometry </li><li style="font-size: 12pt;">  CST Integrated Math 2 </li><li style="font-size: 12pt;">  CST Algebra II </li><li style="font-size: 12pt;">  CST Integrated Math 3 </li><li style="font-size: 12pt;">  CST Summative High School Mathematics (Grade 9-11)  </li><li style="font-size: 12pt;">  CST World History </li><li style="font-size: 12pt;">  CST U.S. History </li><li style="font-size: 12pt;">  CST Biology/Life Sciences </li><li style="font-size: 12pt;">  CST Chemistry </li><li style="font-size: 12pt;">  CST Earth Science </li><li style="font-size: 12pt;">  CST Physics </li><li style="font-size: 12pt;">  CST Integrated/Coordinated Science 1 </li>.
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li style="font-size: 12pt;">  CST Integrated/Coordinated Science 2 </li><li style="font-size: 12pt;">  CST Integrated/Coordinated Science 3 </li><li style="font-size: 12pt;">  CST Integrated/Coordinated Science 4 </li><li style="font-size: 12pt;">  CST General Mathematics (Grades 6 & 7 Standards) </li><li style="font-size: 12pt;">  CST History - Social Science Grade 8 Cumulative </li><li style="font-size: 12pt;">  CAPA English-Language Arts </li><li style="font-size: 12pt;">  CAPA Mathematics </li><li style="font-size: 12pt;">  CST Science - Grade 5, Grade 8, and Grade 10 Life Science </li><li style="font-size: 12pt;">  STS Reading-Language Arts </li><li style="font-size: 12pt;">  STS Mathematics </li><li style="font-size: 12pt;">  CAPA Science </li><li style="font-size: 12pt;">  CMA English-Language Arts </li><li style="font-size: 12pt;">  CMA Mathematics </li><li style="font-size: 12pt;">  CMA Science - Grade 5, Grade 8, and Grade 10 Life Science </li><li style="font-size: 12pt;">  STS Algebra I </li><li style="font-size: 12pt;">  STS Geometry </li>.
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Every Child is Unique'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Distribution of California Schools'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Dataset'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Tests Reported'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
